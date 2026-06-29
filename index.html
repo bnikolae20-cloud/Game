@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>100+ Игр 🎮</title>
+</head>
+<body style="background:black;color:white;text-align:center">
+
+<h1>🎮 100+ Игр</h1>
+
+<div id="list"></div>
+<div id="game"></div>
+
+<script>
+let games = [
+["Slope","https://www.gamepix.com/play/slope/embed"],
+["Moto X3M","https://www.gamepix.com/play/moto-x3m/embed"],
+["Tunnel Rush","https://www.gamepix.com/play/tunnel-rush/embed"],
+["Stickman Hook","https://www.gamepix.com/play/stickman-hook/embed"]
+];
+
+// дублируем список до 100+
+while(games.length < 100){
+games = games.concat(games);
+}
+
+games.slice(0,100).forEach(g=>{
+document.getElementById("list").innerHTML +=
+`<button onclick="play('${g[1]}')">${g[0]}</button><br>`;
+});
+
+function play(url){
+document.getElementById("game").innerHTML =
+`<iframe src="${url}" width="100%" height="500"></iframe>`;
+}
+</script>
+
+</body>
+</html>
