@@ -3,87 +3,43 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#070910">
-<meta name="description" content="NEON ARCADE — каталог браузерных игр.">
+<meta name="description" content="NEON ARCADE — бесплатный каталог браузерных игр">
 <title>NEON ARCADE 🎮</title>
-
 <style>
-:root {
-  --bg:#070910; --panel:#111526; --cyan:#00f5ff;
-  --pink:#ff32c8; --text:#f5f7ff; --muted:#9aa4bf;
-}
+:root{--bg:#070910;--panel:#111526;--cyan:#00f5ff;--pink:#ff32c8;--text:#f5f7ff;--muted:#9aa4bf}
 *{box-sizing:border-box}
-body{
-  margin:0;background:radial-gradient(ellipse at top,#14213f,var(--bg) 55%);
-  color:var(--text);font-family:Arial,system-ui,sans-serif;min-height:100vh
-}
-header{
-  position:sticky;top:0;z-index:5;background:#090c15ed;
-  border-bottom:1px solid #00f5ff30;backdrop-filter:blur(12px)
-}
-.topbar{
-  max-width:1250px;margin:auto;padding:16px;
-  display:flex;align-items:center;justify-content:space-between;gap:10px
-}
-.logo{font-size:21px;font-weight:900;letter-spacing:1px}
-.logo span{color:var(--cyan);text-shadow:0 0 18px var(--cyan)}
+body{margin:0;background:radial-gradient(ellipse at top,#14213f,var(--bg) 55%);color:var(--text);font-family:Arial,system-ui,sans-serif;min-height:100vh}
+header{position:sticky;top:0;z-index:5;background:#090c15ed;border-bottom:1px solid #00f5ff30;backdrop-filter:blur(12px)}
+.topbar{max-width:1250px;margin:auto;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px}.logo span{color:var(--cyan);text-shadow:0 0 18px var(--cyan)}
 .online{font-size:12px;color:var(--cyan);border:1px solid #00f5ff35;padding:9px 12px;border-radius:30px}
 main{max-width:1250px;margin:auto;padding:20px}
-.hero{text-align:center;padding:28px 0}
-.hero h1{font-size:clamp(30px,6vw,56px);margin:12px 0}
-.hero h1 span{color:var(--cyan);text-shadow:0 0 24px #00f5ff50}
+.hero{text-align:center;padding:28px 0}.hero h1{font-size:clamp(30px,6vw,56px);margin:12px 0}.hero h1 span{color:var(--cyan);text-shadow:0 0 24px #00f5ff50}
 .hero p{color:var(--muted);line-height:1.5}
-.search{max-width:650px;margin:22px auto}
-.search input{
-  width:100%;padding:16px;background:#111526;color:white;
-  border:1px solid #00f5ff65;border-radius:15px;font-size:16px;outline:none
-}
+.search{max-width:650px;margin:22px auto}.search input{width:100%;padding:16px;background:var(--panel);color:white;border:1px solid #00f5ff65;border-radius:15px;font-size:16px;outline:none}
 .search input:focus{box-shadow:0 0 20px #00f5ff25}
-.heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:24px 0 14px}
-.heading h2{font-size:21px;margin:0}
-#count{font-size:13px;color:var(--muted)}
+.heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:24px 0 14px}.heading h2{font-size:21px;margin:0}#count{font-size:13px;color:var(--muted)}
 .categories{display:flex;gap:8px;overflow-x:auto;padding:4px 0 15px}
-.cat{
-  flex-shrink:0;padding:10px 14px;border-radius:25px;
-  background:#111526;border:1px solid #30364c;color:#dce5ff
-}
+button{cursor:pointer;font:inherit}
+.cat{flex-shrink:0;padding:10px 14px;border-radius:25px;background:var(--panel);border:1px solid #30364c;color:#dce5ff}
 .cat.active,.cat:hover{background:var(--cyan);color:#050910;border-color:var(--cyan)}
 .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.card{
-  overflow:hidden;border:1px solid #252b42;border-radius:15px;
-  background:linear-gradient(145deg,#171d31,#0c101b);transition:.2s
-}
+.card{overflow:hidden;border:1px solid #252b42;border-radius:15px;background:linear-gradient(145deg,#171d31,#0c101b);transition:.2s}
 .card:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 6px 24px #00f5ff12}
-.cover{
-  height:115px;display:grid;place-items:center;font-size:43px;
-  background:radial-gradient(circle,#163047,#101426 70%)
-}
-.info{padding:12px}
-.info h3{font-size:14px;margin:0 0 8px;overflow-wrap:anywhere}
-.tag{font-size:12px;color:var(--muted)}
-.play{
-  margin-top:13px;width:100%;padding:11px 5px;border-radius:9px;
-  background:#00f5ff12;color:var(--cyan);border:1px solid #00f5ff70;font-weight:bold
-}
+.cover{height:115px;display:grid;place-items:center;font-size:43px;background:radial-gradient(circle,#163047,#101426 70%)}
+.info{padding:12px}.info h3{font-size:14px;margin:0 0 8px;overflow-wrap:anywhere}.tag{font-size:12px;color:var(--muted)}
+.play{margin-top:13px;width:100%;padding:11px 5px;border-radius:9px;background:#00f5ff12;color:var(--cyan);border:1px solid #00f5ff70;font-weight:bold}
 .play:hover{background:var(--cyan);color:#050910}
 .empty{display:none;text-align:center;color:var(--muted);padding:35px}
-.reset{
-  margin-top:12px;padding:10px 16px;border:1px solid var(--cyan);
-  border-radius:10px;background:transparent;color:var(--cyan)
-}
+.reset{margin-top:12px;padding:10px 16px;border:1px solid var(--cyan);border-radius:10px;background:transparent;color:var(--cyan)}
 footer{margin-top:35px;padding:24px;text-align:center;color:var(--muted);font-size:12px;border-top:1px solid #00f5ff20}
-.modal{
-  display:none;position:fixed;inset:0;z-index:20;
-  background:#05060af5;padding:10px
-}
+.modal{display:none;position:fixed;inset:0;z-index:20;background:#05060af5;padding:10px}
 .modal.open{display:flex;flex-direction:column}
 .modalbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:5px 0 12px}
 .modalbar strong{margin-right:auto}
-.modalbar button,.modalbar a{
-  font-size:13px;padding:10px 12px;border:1px solid #30364c;
-  border-radius:9px;background:#151a2b;color:white;text-decoration:none
-}
+.modalbar button,.modalbar a{font-size:13px;padding:10px 12px;border:1px solid #30364c;border-radius:9px;background:#151a2b;color:white;text-decoration:none}
 .modalbar button:hover,.modalbar a:hover{border-color:var(--cyan);color:var(--cyan)}
 #frameWrap{position:relative;flex:1;min-height:0;border:1px solid #30364c;border-radius:12px;overflow:hidden;background:#080a11}
 #frame{width:100%;height:100%;border:0}
@@ -92,297 +48,227 @@ footer{margin-top:35px;padding:24px;text-align:center;color:var(--muted);font-si
 #externalMessage a{display:inline-block;margin-top:12px;color:var(--cyan)}
 body.lock{overflow:hidden}
 @media(max-width:1000px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(max-width:700px){
-  main{padding:12px}
-  .topbar{padding:14px}
-  .logo{font-size:17px}
-  .online{font-size:10px}
-  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-  .cover{height:100px}
-  .hero{padding-top:20px}
-}
+@media(max-width:700px){main{padding:12px}.topbar{padding:14px}.logo{font-size:17px}.online{font-size:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cover{height:100px}.hero{padding-top:20px}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="topbar">
-    <div class="logo">NEON <span>ARCADE</span> 🎮</div>
-    <div class="online">● ONLINE GAMES</div>
-  </div>
-</header>
+<header><div class="topbar"><div class="logo">NEON <span>ARCADE</span> 🎮</div><div class="online">● ONLINE GAMES</div></div></header>
 
 <main>
-  <section class="hero">
-    <h1>Твоя игровая <span>вселенная</span></h1>
-    <p>Выбирай игру и начинай играть. Каталог доступен сразу — искать ничего не обязательно.</p>
-    <div class="search">
-      <input id="search" type="search" placeholder="🔎 Поиск игр (необязательно)">
-    </div>
-  </section>
-
-  <div class="heading">
-    <h2>⚡ Каталог игр</h2>
-    <span id="count"></span>
-  </div>
-
-  <nav class="categories" id="categories"></nav>
-  <section class="grid" id="grid"></section>
-
-  <div class="empty" id="empty">
-    <div>😕 Ничего не найдено</div>
-    <button class="reset" id="reset">Показать все игры</button>
-  </div>
+<section class="hero">
+<h1>Твоя игровая <span>вселенная</span></h1>
+<p>Выбирай игру и начинай играть. Весь каталог уже перед тобой!</p>
+<div class="search"><input id="search" type="search" placeholder="🔎 Поиск игр (необязательно)"></div>
+</section>
+<div class="heading"><h2>⚡ Каталог игр</h2><span id="count"></span></div>
+<nav class="categories" id="categories"></nav>
+<section class="grid" id="grid"></section>
+<div class="empty" id="empty">😕 Ничего не найдено<br><button class="reset" id="reset">Показать все игры</button></div>
 </main>
 
-<footer>NEON ARCADE · Игры размещены на сторонних сайтах.</footer>
+<footer>NEON ARCADE · Игры предоставляются сторонними сайтами. Некоторые игры могут не поддерживать встраивание.</footer>
 
 <div class="modal" id="modal">
-  <div class="modalbar">
-    <strong id="gameTitle">🎮 Игра</strong>
-    <a id="external" href="#" target="_blank" rel="noopener noreferrer">↗ Открыть игру</a>
-    <button id="full">⛶ На весь экран</button>
-    <button id="close">✕ Закрыть</button>
-  </div>
-  <div id="frameWrap">
-    <iframe id="frame" title="Игровое окно"
-      allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
-    <div id="externalMessage">
-      <h2>Готов к игре?</h2>
-      <p>Эта игра открывается на внешнем сайте. Нажми кнопку ниже, чтобы начать играть.</p>
-      <a id="external2" href="#" target="_blank" rel="noopener noreferrer">Играть на сайте ↗</a>
-    </div>
-  </div>
+<div class="modalbar">
+<strong id="gameTitle">🎮 Игра</strong>
+<a id="external" href="#" target="_blank" rel="noopener noreferrer">↗ Открыть на сайте</a>
+<button id="full">⛶ На весь экран</button>
+<button id="close">✕ Закрыть</button>
+</div>
+<div id="frameWrap">
+<iframe id="frame" title="Игровое окно" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
+<div id="externalMessage"><h2>Готов к игре?</h2><p>Эта игра открывается на внешнем сайте.</p><a id="external2" href="#" target="_blank" rel="noopener noreferrer">Играть на сайте ↗</a></div>
+</div>
 </div>
 
 <script>
 "use strict";
 
-/*
-  Для обычных ссылок игра открывается на оригинальном сайте.
-  Встроенный режим доступен только для ссылок, заканчивающихся /embed.
-  Каталог отображается сразу, без необходимости искать игры.
-*/
-
 const games = [
-{name:"Slope",cat:"Аркады",icon:"🟢",url:"https://www.gamepix.com/play/slope/embed"},
-{name:"Moto X3M",cat:"Гонки",icon:"🏍️",url:"https://www.gamepix.com/play/moto-x3m/embed"},
-{name:"Tunnel Rush",cat:"Аркады",icon:"🌀",url:"https://www.gamepix.com/play/tunnel-rush/embed"},
-{name:"Stickman Hook",cat:"Аркады",icon:"🕸️",url:"https://www.gamepix.com/play/stickman-hook/embed"},
-{name:"Subway Surfers",cat:"Аркады",icon:"🚇",url:"https://poki.com/en/g/subway-surfers"},
-{name:"Temple Run 2",cat:"Аркады",icon:"🏃",url:"https://poki.com/en/g/temple-run-2"},
-{name:"Crossy Road",cat:"Аркады",icon:"🐔",url:"https://poki.com/en/g/crossy-road"},
-{name:"Drive Mad",cat:"Гонки",icon:"🚙",url:"https://poki.com/en/g/drive-mad"},
-{name:"Hill Climb Racing",cat:"Гонки",icon:"🚗",url:"https://poki.com/en/g/hill-climb-racing"},
-{name:"Drift Boss",cat:"Гонки",icon:"🏎️",url:"https://poki.com/en/g/drift-boss"},
-{name:"Agar.io",cat:"Аркады",icon:"🔵",url:"https://agar.io/"},
-{name:"Slither.io",cat:"Аркады",icon:"🐍",url:"https://slither.io/"},
-{name:"Minecraft Classic",cat:"Приключения",icon:"⛏️",url:"https://classic.minecraft.net/"},
-{name:"2048",cat:"Головоломки",icon:"🔢",url:"https://play2048.co/"},
-{name:"Chess",cat:"Головоломки",icon:"♟️",url:"https://www.chess.com/play"},
-{name:"Sudoku",cat:"Головоломки",icon:"🧩",url:"https://sudoku.com/"},
-{name:"Cookie Clicker",cat:"Симуляторы",icon:"🍪",url:"https://orteil.dashnet.org/cookieclicker/"},
-{name:"Minesweeper",cat:"Головоломки",icon:"💣",url:"https://minesweeper.online/"},
-{name:"Wordle",cat:"Головоломки",icon:"🔤",url:"https://www.nytimes.com/games/wordle/index.html"},
-{name:"Dinosaur Game",cat:"Аркады",icon:"🦖",url:"https://elgoog.im/t-rex/"},
-{name:"Monkeytype",cat:"Головоломки",icon:"⌨️",url:"https://monkeytype.com/"},
-{name:"Little Alchemy 2",cat:"Головоломки",icon:"⚗️",url:"https://littlealchemy2.com/"},
-{name:"Pac-Man",cat:"Аркады",icon:"👻",url:"https://www.google.com/search?q=Pac-Man+browser+game"},
-{name:"Tetris",cat:"Головоломки",icon:"🧱",url:"https://www.google.com/search?q=Tetris+browser+game"},
-{name:"Geometry Dash",cat:"Аркады",icon:"🔷",url:"https://www.google.com/search?q=Geometry+Dash+browser+game"},
-{name:"Fireboy and Watergirl",cat:"Приключения",icon:"🔥",url:"https://www.google.com/search?q=Fireboy+and+Watergirl+browser+game"},
-{name:"Vex",cat:"Аркады",icon:"🏃",url:"https://www.google.com/search?q=Vex+browser+game"},
-{name:"Paper.io 2",cat:"Аркады",icon:"🟦",url:"https://www.google.com/search?q=Paper.io+2+browser+game"},
-{name:"Bubble Shooter",cat:"Головоломки",icon:"🫧",url:"https://www.google.com/search?q=Bubble+Shooter+browser+game"},
-{name:"Cut the Rope",cat:"Головоломки",icon:"🍬",url:"https://www.google.com/search?q=Cut+the+Rope+browser+game"},
-{name:"Angry Birds",cat:"Аркады",icon:"🐦",url:"https://www.google.com/search?q=Angry+Birds+browser+game"},
-{name:"Fruit Ninja",cat:"Аркады",icon:"🍉",url:"https://www.google.com/search?q=Fruit+Ninja+browser+game"},
-{name:"Drift Hunters",cat:"Гонки",icon:"🚘",url:"https://www.google.com/search?q=Drift+Hunters+browser+game"},
-{name:"Parking Fury",cat:"Гонки",icon:"🅿️",url:"https://www.google.com/search?q=Parking+Fury+browser+game"},
-{name:"Earn to Die",cat:"Гонки",icon:"🧟",url:"https://www.google.com/search?q=Earn+to+Die+browser+game"},
-{name:"Moto Maniac",cat:"Гонки",icon:"🏍️",url:"https://www.google.com/search?q=Moto+Maniac+browser+game"},
-{name:"Basketball Stars",cat:"Спорт",icon:"🏀",url:"https://www.google.com/search?q=Basketball+Stars+browser+game"},
-{name:"Penalty Shooters",cat:"Спорт",icon:"🥅",url:"https://www.google.com/search?q=Penalty+Shooters+browser+game"},
-{name:"Mini Golf",cat:"Спорт",icon:"⛳",url:"https://www.google.com/search?q=mini+golf+browser+game"},
-{name:"Table Tennis",cat:"Спорт",icon:"🏓",url:"https://www.google.com/search?q=table+tennis+browser+game"},
-{name:"Stick War",cat:"Стратегии",icon:"⚔️",url:"https://www.google.com/search?q=Stick+War+browser+game"},
-{name:"Age of War",cat:"Стратегии",icon:"🛡️",url:"https://www.google.com/search?q=Age+of+War+browser+game"},
-{name:"Kingdom Rush",cat:"Стратегии",icon:"🏰",url:"https://www.google.com/search?q=Kingdom+Rush+browser+game"},
-{name:"Bloons Tower Defense",cat:"Стратегии",icon:"🎈",url:"https://www.google.com/search?q=Bloons+Tower+Defense+browser+game"},
-{name:"Plants vs Zombies",cat:"Стратегии",icon:"🌻",url:"https://www.google.com/search?q=Plants+vs+Zombies+browser+game"},
-{name:"Solitaire",cat:"Карты",icon:"🃏",url:"https://www.google.com/search?q=Solitaire+browser+game"},
-{name:"Spider Solitaire",cat:"Карты",icon:"🕷️",url:"https://www.google.com/search?q=Spider+Solitaire+browser+game"},
-{name:"FreeCell",cat:"Карты",icon:"🂡",url:"https://www.google.com/search?q=FreeCell+browser+game"},
-{name:"Checkers",cat:"Стратегии",icon:"⚫",url:"https://www.google.com/search?q=Checkers+browser+game"},
-{name:"Backgammon",cat:"Стратегии",icon:"🎲",url:"https://www.google.com/search?q=Backgammon+browser+game"},
-{name:"Ludo",cat:"Стратегии",icon:"🎲",url:"https://www.google.com/search?q=Ludo+browser+game"},
-{name:"Snail Bob",cat:"Головоломки",icon:"🐌",url:"https://www.google.com/search?q=Snail+Bob+browser+game"},
-{name:"Wheely",cat:"Головоломки",icon:"🚗",url:"https://www.google.com/search?q=Wheely+browser+game"},
-{name:"Bob the Robber",cat:"Приключения",icon:"🥷",url:"https://www.google.com/search?q=Bob+the+Robber+browser+game"},
-{name:"Duck Life",cat:"Приключения",icon:"🦆",url:"https://www.google.com/search?q=Duck+Life+browser+game"},
-{name:"Happy Wheels",cat:"Аркады",icon:"🦽",url:"https://www.google.com/search?q=Happy+Wheels+browser+game"},
-{name:"Getaway Shootout",cat:"Аркады",icon:"🏃",url:"https://www.google.com/search?q=Getaway+Shootout+browser+game"},
-{name:"Rooftop Snipers",cat:"Аркады",icon:"🏙️",url:"https://www.google.com/search?q=Rooftop+Snipers+browser+game"},
-{name:"Helix Jump",cat:"Аркады",icon:"🟣",url:"https://www.google.com/search?q=Helix+Jump+browser+game"},
-{name:"Color Switch",cat:"Аркады",icon:"🌈",url:"https://www.google.com/search?q=Color+Switch+browser+game"},
-{name:"Stack",cat:"Аркады",icon:"🗼",url:"https://www.google.com/search?q=Stack+browser+game"},
-{name:"Going Balls",cat:"Аркады",icon:"⚽",url:"https://www.google.com/search?q=Going+Balls+browser+game"},
-{name:"Parkour Race",cat:"Спорт",icon:"🏃",url:"https://www.google.com/search?q=Parkour+Race+browser+game"},
-{name:"Archery World Tour",cat:"Спорт",icon:"🏹",url:"https://www.google.com/search?q=Archery+World+Tour+browser+game"},
-{name:"Traffic Tour",cat:"Гонки",icon:"🚦",url:"https://www.google.com/search?q=Traffic+Tour+browser+game"},
-{name:"Car Rush",cat:"Гонки",icon:"🚕",url:"https://www.google.com/search?q=Car+Rush+browser+game"},
-{name:"Monster Truck",cat:"Гонки",icon:"🚚",url:"https://www.google.com/search?q=Monster+Truck+browser+game"},
-{name:"City Builder",cat:"Симуляторы",icon:"🏙️",url:"https://www.google.com/search?q=City+Builder+browser+game"},
-{name:"Farm Simulator",cat:"Симуляторы",icon:"🚜",url:"https://www.google.com/search?q=Farm+Simulator+browser+game"},
-{name:"Cooking Games",cat:"Симуляторы",icon:"🍳",url:"https://www.google.com/search?q=Cooking+browser+game"},
-{name:"Restaurant Simulator",cat:"Симуляторы",icon:"🍽️",url:"https://www.google.com/search?q=Restaurant+browser+game"},
-{name:"Fishing Games",cat:"Симуляторы",icon:"🎣",url:"https://www.google.com/search?q=Fishing+browser+game"},
-{name:"Dress Up",cat:"Симуляторы",icon:"👗",url:"https://www.google.com/search?q=Dress+Up+browser+game"},
-{name:"Idle Miner",cat:"Симуляторы",icon:"⛏️",url:"https://www.google.com/search?q=Idle+Miner+browser+game"},
-{name:"Clicker Heroes",cat:"Симуляторы",icon:"👆",url:"https://www.google.com/search?q=Clicker+Heroes+browser+game"},
-{name:"Escape Room",cat:"Приключения",icon:"🚪",url:"https://www.google.com/search?q=Escape+Room+browser+game"},
-{name:"Space Adventure",cat:"Приключения",icon:"🪐",url:"https://www.google.com/search?q=Space+Adventure+browser+game"},
-{name:"Zombie Survival",cat:"Приключения",icon:"🧟",url:"https://www.google.com/search?q=Zombie+Survival+browser+game"},
-{name:"Dungeon Quest",cat:"Приключения",icon:"🗡️",url:"https://www.google.com/search?q=Dungeon+Quest+browser+game"},
-{name:"RPG Adventure",cat:"Приключения",icon:"🐉",url:"https://www.google.com/search?q=RPG+browser+game"},
-{name:"Jigsaw Puzzles",cat:"Головоломки",icon:"🧩",url:"https://www.google.com/search?q=Jigsaw+Puzzles+online"},
-{name:"Nonogram",cat:"Головоломки",icon:"⬛",url:"https://www.google.com/search?q=Nonogram+browser+game"},
-{name:"Find the Difference",cat:"Головоломки",icon:"🔍",url:"https://www.google.com/search?q=Find+the+Difference+game"},
-{name:"Trivia Quiz",cat:"Головоломки",icon:"❓",url:"https://www.google.com/search?q=Trivia+Quiz+game"},
-{name:"Geography Quiz",cat:"Головоломки",icon:"🌍",url:"https://www.google.com/search?q=Geography+Quiz+game"},
-{name:"Ant Colony",cat:"Симуляторы",icon:"🐜",url:"https://www.google.com/search?q=Ant+Colony+browser+game"},
-{name:"Doodle Jump",cat:"Аркады",icon:"🐸",url:"https://www.google.com/search?q=Doodle+Jump+browser+game"},
-{name:"Super Mario",cat:"Приключения",icon:"🍄",url:"https://www.google.com/search?q=Super+Mario+browser+game"},
-{name:"Sonic",cat:"Приключения",icon:"💨",url:"https://www.google.com/search?q=Sonic+browser+game"},
-{name:"Among Us",cat:"Приключения",icon:"🚀",url:"https://www.google.com/search?q=Among+Us+browser+game"},
-{name:"World's Hardest Game",cat:"Аркады",icon:"🟥",url:"https://www.google.com/search?q=Worlds+Hardest+Game"},
-{name:"Idle Breakout",cat:"Симуляторы",icon:"🧱",url:"https://www.google.com/search?q=Idle+Breakout+game"},
-{name:"Bad Ice Cream",cat:"Аркады",icon:"🍦",url:"https://www.google.com/search?q=Bad+Ice+Cream+game"},
-{name:"Penalty Kick",cat:"Спорт",icon:"⚽",url:"https://www.google.com/search?q=Penalty+Kick+browser+game"},
-{name:"Bowling",cat:"Спорт",icon:"🎳",url:"https://www.google.com/search?q=Bowling+browser+game"},
-{name:"Pool",cat:"Спорт",icon:"🎱",url:"https://www.google.com/search?q=Pool+browser+game"},
-{name:"Word Search",cat:"Головоломки",icon:"🔠",url:"https://www.google.com/search?q=Word+Search+online+game"},
-{name:"Memory Game",cat:"Головоломки",icon:"🧠",url:"https://www.google.com/search?q=Memory+browser+game"},
-{name:"Tower Defense",cat:"Стратегии",icon:"🏯",url:"https://www.google.com/search?q=Tower+Defense+browser+game"},
-{name:"Platformer",cat:"Приключения",icon:"🕹️",url:"https://www.google.com/search?q=Platformer+browser+game"},
-{name:"Mystery Adventure",cat:"Приключения",icon:"🕵️",url:"https://www.google.com/search?q=Mystery+Adventure+browser+game"}
-];
+["Slope","Аркады","🟢","https://www.gamepix.com/play/slope/embed"],
+["Moto X3M","Гонки","🏍️","https://www.gamepix.com/play/moto-x3m/embed"],
+["Tunnel Rush","Аркады","🌀","https://www.gamepix.com/play/tunnel-rush/embed"],
+["Stickman Hook","Аркады","🕸️","https://www.gamepix.com/play/stickman-hook/embed"],
+["Subway Surfers","Аркады","🚇","https://poki.com/en/g/subway-surfers"],
+["Temple Run 2","Аркады","🏃","https://poki.com/en/g/temple-run-2"],
+["Crossy Road","Аркады","🐔","https://poki.com/en/g/crossy-road"],
+["Drive Mad","Гонки","🚙","https://poki.com/en/g/drive-mad"],
+["Hill Climb Racing","Гонки","🚗","https://poki.com/en/g/hill-climb-racing"],
+["Drift Boss","Гонки","🏎️","https://poki.com/en/g/drift-boss"],
+["Agar.io","Аркады","🔵","https://agar.io/"],
+["Slither.io","Аркады","🐍","https://slither.io/"],
+["Minecraft Classic","Приключения","⛏️","https://classic.minecraft.net/"],
+["2048","Головоломки","🔢","https://play2048.co/"],
+["Chess","Головоломки","♟️","https://www.chess.com/play"],
+["Sudoku","Головоломки","🧩","https://sudoku.com/"],
+["Cookie Clicker","Симуляторы","🍪","https://orteil.dashnet.org/cookieclicker/"],
+["Minesweeper","Головоломки","💣","https://minesweeper.online/"],
+["Wordle","Головоломки","🔤","https://www.nytimes.com/games/wordle/index.html"],
+["Dinosaur Game","Аркады","🦖","https://elgoog.im/t-rex/"],
+["Monkeytype","Головоломки","⌨️","https://monkeytype.com/"],
+["Little Alchemy 2","Головоломки","⚗️","https://littlealchemy2.com/"],
+["Pac-Man","Аркады","👻","https://www.google.com/search?q=Pac-Man+browser+game"],
+["Tetris","Головоломки","🧱","https://www.google.com/search?q=Tetris+browser+game"],
+["Geometry Dash","Аркады","🔷","https://www.google.com/search?q=Geometry+Dash+browser+game"],
+["Fireboy and Watergirl","Приключения","🔥","https://www.google.com/search?q=Fireboy+and+Watergirl+browser+game"],
+["Vex","Аркады","🏃","https://www.google.com/search?q=Vex+browser+game"],
+["Paper.io 2","Аркады","🟦","https://www.google.com/search?q=Paper.io+2+browser+game"],
+["Bubble Shooter","Головоломки","🫧","https://www.google.com/search?q=Bubble+Shooter+browser+game"],
+["Cut the Rope","Головоломки","🍬","https://www.google.com/search?q=Cut+the+Rope+browser+game"],
+["Angry Birds","Аркады","🐦","https://www.google.com/search?q=Angry+Birds+browser+game"],
+["Fruit Ninja","Аркады","🍉","https://www.google.com/search?q=Fruit+Ninja+browser+game"],
+["Drift Hunters","Гонки","🚘","https://www.google.com/search?q=Drift+Hunters+browser+game"],
+["Parking Fury","Гонки","🅿️","https://www.google.com/search?q=Parking+Fury+browser+game"],
+["Earn to Die","Гонки","🧟","https://www.google.com/search?q=Earn+to+Die+browser+game"],
+["Moto Maniac","Гонки","🏍️","https://www.google.com/search?q=Moto+Maniac+browser+game"],
+["Basketball Stars","Спорт","🏀","https://www.google.com/search?q=Basketball+Stars+browser+game"],
+["Penalty Shooters","Спорт","🥅","https://www.google.com/search?q=Penalty+Shooters+browser+game"],
+["Mini Golf","Спорт","⛳","https://www.google.com/search?q=mini+golf+browser+game"],
+["Table Tennis","Спорт","🏓","https://www.google.com/search?q=table+tennis+browser+game"],
+["Stick War","Стратегии","⚔️","https://www.google.com/search?q=Stick+War+browser+game"],
+["Age of War","Стратегии","🛡️","https://www.google.com/search?q=Age+of+War+browser+game"],
+["Kingdom Rush","Стратегии","🏰","https://www.google.com/search?q=Kingdom+Rush+browser+game"],
+["Bloons Tower Defense","Стратегии","🎈","https://www.google.com/search?q=Bloons+Tower+Defense+browser+game"],
+["Plants vs Zombies","Стратегии","🌻","https://www.google.com/search?q=Plants+vs+Zombies+browser+game"],
+["Solitaire","Карты","🃏","https://www.google.com/search?q=Solitaire+browser+game"],
+["Spider Solitaire","Карты","🕷️","https://www.google.com/search?q=Spider+Solitaire+browser+game"],
+["FreeCell","Карты","🂡","https://www.google.com/search?q=FreeCell+browser+game"],
+["Checkers","Стратегии","⚫","https://www.google.com/search?q=Checkers+browser+game"],
+["Backgammon","Стратегии","🎲","https://www.google.com/search?q=Backgammon+browser+game"],
+["Ludo","Стратегии","🎲","https://www.google.com/search?q=Ludo+browser+game"],
+["Snail Bob","Головоломки","🐌","https://www.google.com/search?q=Snail+Bob+browser+game"],
+["Wheely","Головоломки","🚗","https://www.google.com/search?q=Wheely+browser+game"],
+["Bob the Robber","Приключения","🥷","https://www.google.com/search?q=Bob+the+Robber+browser+game"],
+["Duck Life","Приключения","🦆","https://www.google.com/search?q=Duck+Life+browser+game"],
+["Happy Wheels","Аркады","🦽","https://www.google.com/search?q=Happy+Wheels+browser+game"],
+["Getaway Shootout","Аркады","🏃","https://www.google.com/search?q=Getaway+Shootout+browser+game"],
+["Rooftop Snipers","Аркады","🏙️","https://www.google.com/search?q=Rooftop+Snipers+browser+game"],
+["Helix Jump","Аркады","🟣","https://www.google.com/search?q=Helix+Jump+browser+game"],
+["Color Switch","Аркады","🌈","https://www.google.com/search?q=Color+Switch+browser+game"],
+["Stack","Аркады","🗼","https://www.google.com/search?q=Stack+browser+game"],
+["Going Balls","Аркады","⚽","https://www.google.com/search?q=Going+Balls+browser+game"],
+["Parkour Race","Спорт","🏃","https://www.google.com/search?q=Parkour+Race+browser+game"],
+["Archery World Tour","Спорт","🏹","https://www.google.com/search?q=Archery+World+Tour+browser+game"],
+["Traffic Tour","Гонки","🚦","https://www.google.com/search?q=Traffic+Tour+browser+game"],
+["Car Rush","Гонки","🚕","https://www.google.com/search?q=Car+Rush+browser+game"],
+["Monster Truck","Гонки","🚚","https://www.google.com/search?q=Monster+Truck+browser+game"],
+["City Builder","Симуляторы","🏙️","https://www.google.com/search?q=City+Builder+browser+game"],
+["Farm Simulator","Симуляторы","🚜","https://www.google.com/search?q=Farm+Simulator+browser+game"],
+["Cooking Games","Симуляторы","🍳","https://www.google.com/search?q=Cooking+browser+game"],
+["Restaurant Simulator","Симуляторы","🍽️","https://www.google.com/search?q=Restaurant+browser+game"],
+["Fishing Games","Симуляторы","🎣","https://www.google.com/search?q=Fishing+browser+game"],
+["Dress Up","Симуляторы","👗","https://www.google.com/search?q=Dress+Up+browser+game"],
+["Idle Miner","Симуляторы","⛏️","https://www.google.com/search?q=Idle+Miner+browser+game"],
+["Clicker Heroes","Симуляторы","👆","https://www.google.com/search?q=Clicker+Heroes+browser+game"],
+["Escape Room","Приключения","🚪","https://www.google.com/search?q=Escape+Room+browser+game"],
+["Space Adventure","Приключения","🪐","https://www.google.com/search?q=Space+Adventure+browser+game"],
+["Zombie Survival","Приключения","🧟","https://www.google.com/search?q=Zombie+Survival+browser+game"],
+["Dungeon Quest","Приключения","🗡️","https://www.google.com/search?q=Dungeon+Quest+browser+game"],
+["RPG Adventure","Приключения","🐉","https://www.google.com/search?q=RPG+browser+game"],
+["Jigsaw Puzzles","Головоломки","🧩","https://www.google.com/search?q=Jigsaw+Puzzles+online"],
+["Nonogram","Головоломки","⬛","https://www.google.com/search?q=Nonogram+browser+game"],
+["Find the Difference","Головоломки","🔍","https://www.google.com/search?q=Find+the+Difference+game"],
+["Trivia Quiz","Головоломки","❓","https://www.google.com/search?q=Trivia+Quiz+game"],
+["Geography Quiz","Головоломки","🌍","https://www.google.com/search?q=Geography+Quiz+game"],
+["Ant Colony","Симуляторы","🐜","https://www.google.com/search?q=Ant+Colony+browser+game"],
+["Doodle Jump","Аркады","🐸","https://www.google.com/search?q=Doodle+Jump+browser+game"],
+["Super Mario","Приключения","🍄","https://www.google.com/search?q=Super+Mario+browser+game"],
+["Sonic","Приключения","💨","https://www.google.com/search?q=Sonic+browser+game"],
+["Among Us","Приключения","🚀","https://www.google.com/search?q=Among+Us+browser+game"],
+["World's Hardest Game","Аркады","🟥","https://www.google.com/search?q=Worlds+Hardest+Game"],
+["Idle Breakout","Симуляторы","🧱","https://www.google.com/search?q=Idle+Breakout+game"],
+["Bad Ice Cream","Аркады","🍦","https://www.google.com/search?q=Bad+Ice+Cream+game"],
+["Penalty Kick","Спорт","⚽","https://www.google.com/search?q=Penalty+Kick+browser+game"],
+["Bowling","Спорт","🎳","https://www.google.com/search?q=Bowling+browser+game"],
+["Pool","Спорт","🎱","https://www.google.com/search?q=Pool+browser+game"],
+["Word Search","Головоломки","🔠","https://www.google.com/search?q=Word+Search+online+game"],
+["Memory Game","Головоломки","🧠","https://www.google.com/search?q=Memory+browser+game"],
+["Tower Defense","Стратегии","🏯","https://www.google.com/search?q=Tower+Defense+browser+game"],
+["Platformer","Приключения","🕹️","https://www.google.com/search?q=Platformer+browser+game"],
+["Mystery Adventure","Приключения","🕵️","https://www.google.com/search?q=Mystery+Adventure+browser+game"]
+].map(([name,cat,icon,url])=>({name,cat,icon,url}));
 
-const $ = id => document.getElementById(id);
-const grid = $("grid");
-const search = $("search");
-const count = $("count");
-const empty = $("empty");
-const modal = $("modal");
-const frame = $("frame");
-const frameWrap = $("frameWrap");
-const externalMessage = $("externalMessage");
+const $=id=>document.getElementById(id);
+const grid=$("grid"),search=$("search"),count=$("count"),empty=$("empty");
+const modal=$("modal"),frame=$("frame"),frameWrap=$("frameWrap"),externalMessage=$("externalMessage");
+let selectedCategory="Все";
+const categories=["Все",...new Set(games.map(g=>g.cat))];
 
-let selectedCategory = "Все";
-
-const categories = ["Все", ...new Set(games.map(g => g.cat))];
-
-function normalize(text) {
-  return text.toLocaleLowerCase("ru")
-    .replace(/ё/g,"е")
-    .replace(/[^a-zа-я0-9]/gi,"");
+function normalize(text){
+ return text.toLocaleLowerCase("ru").replace(/ё/g,"е").replace(/[^a-zа-я0-9]/gi,"");
 }
-
-function renderCategories() {
-  $("categories").replaceChildren();
-
-  categories.forEach(category => {
-    const button = document.createElement("button");
-    button.className = "cat" + (category === selectedCategory ? " active" : "");
-    button.textContent = category;
-    button.type = "button";
-
-    button.addEventListener("click", () => {
-      selectedCategory = category;
-      renderCategories();
-      renderGames();
-    });
-
-    $("categories").appendChild(button);
+function renderCategories(){
+ const nav=$("categories");
+ nav.replaceChildren();
+ categories.forEach(category=>{
+  const button=document.createElement("button");
+  button.className="cat"+(category===selectedCategory?" active":"");
+  button.textContent=category;
+  button.type="button";
+  button.addEventListener("click",()=>{
+   selectedCategory=category;
+   renderCategories();
+   renderGames();
   });
+  nav.appendChild(button);
+ });
 }
-
-function renderGames() {
-  const query = normalize(search.value);
-
-  const filtered = games.filter(game => {
-    const categoryMatch =
-      selectedCategory === "Все" || game.cat === selectedCategory;
-
-    const nameMatch =
-      !query ||
-      normalize(game.name).includes(query) ||
-      normalize(game.cat).includes(query) ||
-      normalize(game.name).replace(/x3m/g,"m3x").includes(query);
-
-    return categoryMatch && nameMatch;
-  });
-
-  grid.replaceChildren();
-  count.textContent = `Показано: ${filtered.length} из ${games.length}`;
-  empty.style.display = filtered.length ? "none" : "block";
-  grid.style.display = filtered.length ? "grid" : "none";
-
-  filtered.forEach(game => {
-    const card = document.createElement("article");
-    card.className = "card";
-
-    const cover = document.createElement("div");
-    cover.className = "cover";
-    cover.textContent = game.icon;
-
-    const info = document.createElement("div");
-    info.className = "info";
-
-    const title = document.createElement("h3");
-    title.textContent = game.name;
-
-    const tag = document.createElement("div");
-    tag.className = "tag";
-    tag.textContent = game.cat;
-
-    const button = document.createElement("button");
-    button.className = "play";
-    button.type = "button";
-    button.textContent = "▶ ИГРАТЬ";
-    button.addEventListener("click", () => openGame(game));
-
-    info.append(title, tag, button);
-    card.append(cover, info);
-    grid.appendChild(card);
-  });
+function renderGames(){
+ const query=normalize(search.value);
+ const filtered=games.filter(game=>{
+  const categoryMatch=selectedCategory==="Все"||game.cat===selectedCategory;
+  let name=normalize(game.name);
+  if(name==="motox3m") name="motom3x";
+  const q=query==="motom3x"?"motom3x":query;
+  return categoryMatch&&(!q||name.includes(q)||normalize(game.cat).includes(q));
+ });
+ grid.replaceChildren();
+ count.textContent=`Показано: ${filtered.length} из ${games.length}`;
+ empty.style.display=filtered.length?"none":"block";
+ grid.style.display=filtered.length?"grid":"none";
+ filtered.forEach(game=>{
+  const card=document.createElement("article");card.className="card";
+  const cover=document.createElement("div");cover.className="cover";cover.textContent=game.icon;
+  const info=document.createElement("div");info.className="info";
+  const title=document.createElement("h3");title.textContent=game.name;
+  const tag=document.createElement("div");tag.className="tag";tag.textContent=game.cat;
+  const button=document.createElement("button");button.className="play";button.type="button";button.textContent="▶ ИГРАТЬ";
+  button.addEventListener("click",()=>openGame(game));
+  info.append(title,tag,button);card.append(cover,info);grid.appendChild(card);
+ });
 }
-
-function openGame(game) {
-  $("gameTitle").textContent = "🎮 " + game.name;
-  $("external").href = game.url;
-  $("external2").href = game.url;
-
-  modal.classList.add("open");
-  document.body.classList.add("lock");
-
-  const isEmbed = /\/embed\/?$/.test(game.url);
-
-  if (isEmbed) {
-    externalMessage.style.display = "none";
-    frame.style.display = "block";
-    frame.src = game.url;
-  } else {
-    frame.removeAttribute("src");
-    frame.style.display = "none";
-    externalMessage.style.display = "grid";
-  }
+function openGame(game){
+ $("gameTitle").textContent="🎮 "+game.name;
+ $("external").href=game.url;$("external2").href=game.url;
+ modal.classList.add("open");document.body.classList.add("lock");
+ const isEmbed=/\/embed\/?$/.test(game.url);
+ if(isEmbed){
+  externalMessage.style.display="none";frame.style.display="block";frame.src=game.url;
+ }else{
+  frame.removeAttribute("src");frame.style.display="none";externalMessage.style.display="grid";
+ }
 }
-
-function closeGame() {
-  modal.classList.remove("open");
-  document.body.classList.remove("lock");
-  frame.removeAttribute("src");
+function closeGame(){
+ modal.classList.remove("open");document.body.classList.remove("lock");frame.removeAttribute("src");
 }
+$("close").addEventListener("click",closeGame);
+modal.addEventListener("click",event=>{if(event.target===modal)closeGame()});
+document.addEventListener("keydown",event=>{if(event.key==="Escape")closeGame()});
+$("reset").addEventListener("click",()=>{
+ search.value="";selectedCategory="Все";renderCategories();renderGames();
+ window.scrollTo({top:0,behavior:"smooth"});
+});
+search.addEventListener("input",renderGames);
+$("full").addEventListener("click",async()=>{
+ try{
+  if(!document.fullscreenElement) await frameWrap.requestFullscreen();
+  else await document.exitFullscreen();
+ }catch(error){alert("Полноэкранный режим не поддерживается браузером.")}
+});
 
-$("close").addEventListener("click", closeG
+// Автоматически показываем все игры сразу при открытии страницы.
+renderCategories();
+renderGames();
+</script>
+</body>
+</html>
